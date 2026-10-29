@@ -3,6 +3,7 @@ import pool from './pool';
 // Test the database connection
 async function testConnection() {
   try {
+    console.log('Attempting database connection...');
     const client = await pool.connect();
     console.log('Database connection established successfully');
     client.release();

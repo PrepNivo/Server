@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const config = {
+  databaseUrl: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
   port: process.env.PORT || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
   dbHost: process.env.DB_HOST || 'localhost',

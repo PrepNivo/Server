@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import routes from './api/v1/routes';
+import routesV1 from './routes/v1/';
 import { errorHandler } from './middleware/error.middleware';
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api', routes);
+app.use('/api/v1', routesV1);
 
 // Error handling middleware
 app.use(errorHandler);

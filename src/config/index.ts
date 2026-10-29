@@ -11,4 +11,5 @@ export const config = {
   dbName: process.env.DB_NAME || 'prepnivo',
   dbUser: process.env.DB_USER || 'postgres',
   dbPassword: process.env.DB_PASSWORD || 'password',
+  jwtSecret: process.env.JWT_SECRET || 'super-secret-key',
 };

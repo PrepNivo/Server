@@ -28,8 +28,31 @@ This backend service provides RESTful API endpoints for user authentication and 
   }
   ```
 
-```bash
-bun run index.ts
-```
+### 2. Login
+- **URL:** `/api/v1/login`
+- **Method:** `POST`
+- **Description:** Authenticates a user and returns a JWT token.
+- **Request Body:**
+  ```json
+  {
+    "email": "john@example.com",
+    "password": "yourpassword"
+  }
+  ```
+- **Response:** `200 OK`
+  ```json
+  {
+    "message": "Login successful",
+    "token": "your.jwt.token",
+    "user": {
+      "id": "...",
+      "fullname": "John Doe",
+      "email": "john@example.com"
+    }
+  }
+  ```
 
-This project was created using `bun init` in bun v1.4.2. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Health Check
+- **URL:** `/api/v1/health`
+- **Method:** `GET`
+- **Description:** Verifies that the API is running.

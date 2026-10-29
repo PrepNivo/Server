@@ -12,4 +12,6 @@ export const config = {
   dbUser: process.env.DB_USER || 'postgres',
   dbPassword: process.env.DB_PASSWORD || 'password',
   jwtSecret: process.env.JWT_SECRET || 'super-secret-key',
+  neonAuthBaseUrl: process.env.NEON_AUTH_BASE_URL,
+  neonAuthJwksUrl: process.env.NEON_AUTH_JWKS_URL,
 };

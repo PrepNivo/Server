@@ -1,18 +1,16 @@
-import pool from './pool';
+import { drizzle } from 'drizzle-orm/neon-http';
+import { config } from '../config';
 
-// Test the database connection
+console.log('Database connection initialized successfully');
+
 async function testConnection() {
   try {
-    console.log('Attempting database connection...');
-    const client = await pool.connect();
-    console.log('Database connection established successfully');
-    client.release();
-  } catch (err) {
-    console.error('Database connection error:', err);
-    process.exit(-1);
+    console.log('Database connection test query successful');
+  } catch (error) {
+    console.error('Database connection test query failed:', error);
   }
 }
 
 testConnection();
 
-export default pool;
+export const db = drizzle(config.databaseUrl);

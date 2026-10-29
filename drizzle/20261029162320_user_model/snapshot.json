@@ -2,7 +2,7 @@
   "type": "base",
   "version": "9",
   "dialect": "postgres",
-  "id": "e8e17b8b-9190-4b62-9472-3201954b7ad2",
+  "id": "befb3a4d-073a-4ef5-8d0a-50121902b8a5",
   "prevIds": [
     "00000000-0000-0000-0000-000000000000"
   ],
@@ -38,11 +38,11 @@
       "schema": "public",
       "table": "users",
       "name": "id",
-      "type": "serial",
+      "type": "uuid",
       "typeSchema": null,
       "notNull": true,
       "dimensions": 0,
-      "default": null,
+      "default": "gen_random_uuid()",
       "generated": null,
       "identity": null,
       "entityType": "columns"
@@ -64,6 +64,19 @@
       "schema": "public",
       "table": "users",
       "name": "password",
+      "type": "text",
+      "typeSchema": null,
+      "notNull": true,
+      "dimensions": 0,
+      "default": null,
+      "generated": null,
+      "identity": null,
+      "entityType": "columns"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "name": "full_name",
       "type": "text",
       "typeSchema": null,
       "notNull": true,

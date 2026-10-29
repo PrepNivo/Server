@@ -1,12 +1,32 @@
-# prepnivo
+# Prepnivo Backend API Documentation
 
-To install dependencies:
+This backend service provides RESTful API endpoints for user authentication and management.
 
-```bash
-bun install
-```
+## Authentication Endpoints
 
-To run:
+### 1. Signup
+- **URL:** `/api/v1/signup`
+- **Method:** `POST`
+- **Description:** Creates a new user account.
+- **Request Body:**
+  ```json
+  {
+    "fullname": "John Doe",
+    "email": "john@example.com",
+    "password": "yourpassword"
+  }
+  ```
+- **Response:** `201 Created`
+  ```json
+  {
+    "message": "User created successfully",
+    "user": {
+      "id": "...",
+      "fullname": "John Doe",
+      "email": "john@example.com"
+    }
+  }
+  ```
 
 ```bash
 bun run index.ts

@@ -21,7 +21,7 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
   const token = authHeader.split(' ')[1];
 
   try {
-    const decoded = jwt.verify(token, config.jwtSecret) as { userId: string };
+    const decoded = jwt.verify(token as string, config.jwtSecret) as { userId: string };
     req.userId = decoded.userId;
     next();
   } catch (error) {
